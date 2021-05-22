@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void maiorMenor (int *pontCadeiaNum, int *pontMaxNum, int *pontMinNum);
+void maiorMenor (int *pontCadeiaNum, int *pontMaxNum, int *pontMinNum, int cn);
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
     maxNum = cadeiaNum[0];
     minNum = cadeiaNum[0];
 
-    maiorMenor (cadeiaNum, &maxNum, &minNum);
+    maiorMenor (cadeiaNum, &maxNum, &minNum, numVal);
 
     cout << "Valores do vetor: ";
     for (int i = 0; i < numVal; i++)
@@ -38,16 +38,16 @@ int main()
 }
 
 
-void maiorMenor (int *pontCadeiaNum, int *pontMaxNum, int *pontMinNum)
+void maiorMenor (int *pontCadeiaNum, int *pontMaxNum, int *pontMinNum, int cn)
  {
 
 
-     for (int i = 0; i < 1000; i++) {
+     for (int i = 0; i < cn; i++) {
 
-        if (pontCadeiaNum[i] > pontMaxNum) {
-            pontMaxNum = pontCadeiaNum[i];
-        } else if (pontCadeiaNum[i] < pontMinNum) {
-            pontMinNum = pontCadeiaNum[i];
+        if (pontCadeiaNum[i] > *pontMaxNum) {
+            *pontMaxNum = pontCadeiaNum[i];
+        } else if (pontCadeiaNum[i] < *pontMinNum) {
+            *pontMinNum = pontCadeiaNum[i];
         }
 
      }
